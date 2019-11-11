@@ -1,15 +1,39 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Http;
+using SocialNetwork.Models;
+using SocialNetwork.Services;
 
 namespace SocialNetwork.Controllers
 {
     [RoutePrefix("api/user")]
     public class UserController : ApiController
     {
-        [Route("getAll")]
-        [HttpGet]
-        public string Get()
+        private readonly UserService _userService;
+        public UserController()
         {
-            return "s";
+            _userService = new UserService();
+        }
+
+        [Route("getAll")]
+        [HttpPost]
+        public async Task<IEnumerable<User>> GetAllAsync([FromBody] string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+                throw new AggregateException(nameof(query));
+
+            return await _userService.GetAllAsync(query);
+        }
+
+        [Route("getById")]
+        [HttpPost]
+        public async Task<User> GetByIdAsync([FromBody] string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+                throw new ArgumentException(nameof(query));
+
+            return await _userService.GetByIdAsync(query);
         }
     }
 }

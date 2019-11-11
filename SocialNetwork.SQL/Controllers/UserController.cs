@@ -24,8 +24,7 @@ namespace SocialNetwork.SQL.Controllers
             if (string.IsNullOrWhiteSpace(query))
                 throw new ArgumentException(nameof(query));
 
-            var result = await _userService.GetAllAsync(query);
-            return result;
+            return await _userService.GetAllAsync(query);
         }
 
         [Route("getById")]
@@ -35,8 +34,7 @@ namespace SocialNetwork.SQL.Controllers
             if (string.IsNullOrWhiteSpace(query))
                 throw new ArgumentException(nameof(query));
 
-            var result = await _userService.GetByIdAsync(query);
-            return result;
+            return await _userService.GetByIdAsync(query);
         }
     }
 }
