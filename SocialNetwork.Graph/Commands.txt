@@ -1,0 +1,15 @@
+﻿MATCH (n)
+OPTIONAL MATCH (n)-[r]-()
+DELETE r,n 
+
+WITH count(*) as dummy
+
+LOAD CSV FROM "file:///Users.csv" AS line
+CREATE (:User { id: toInt(line[0]), firstName: line[1], lastName: line[2]})
+
+WITH count(*) as dummy
+
+LOAD CSV WITH HEADERS FROM "file:///Relationships.csv" AS csvLine
+MATCH (userFrom:User {id: toInteger(csvLine.FromId)}),(userTo:User {id: toInteger(csvLine.ToId)})
+CREATE (userFrom)-[:Relationship {relationship:csvLine.Relationship}]->(userTo)
+

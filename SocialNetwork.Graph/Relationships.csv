@@ -1,0 +1,7 @@
+FromId,ToId,Relationship
+2,1,Girl
+3,2,Friend
+3,1,Friend
+4,3,Friend
+5,4,Friend
+6,5,Friend
