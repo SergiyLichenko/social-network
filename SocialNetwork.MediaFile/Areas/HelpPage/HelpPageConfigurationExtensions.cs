@@ -13,6 +13,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using SocialNetwork.MediaFile.Areas.HelpPage.ModelDescriptions;
 using SocialNetwork.MediaFile.Areas.HelpPage.Models;
+using SocialNetwork.MediaFile.Areas.HelpPage.SampleGeneration;
 
 namespace SocialNetwork.MediaFile.Areas.HelpPage
 {

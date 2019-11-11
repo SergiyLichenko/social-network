@@ -1,4 +1,4 @@
-namespace SocialNetwork.MediaFile.Areas.HelpPage
+namespace SocialNetwork.MediaFile.Areas.HelpPage.SampleGeneration
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

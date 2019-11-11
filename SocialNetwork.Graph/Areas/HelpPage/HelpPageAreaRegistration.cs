@@ -1,5 +1,6 @@
 using System.Web.Http;
 using System.Web.Mvc;
+using SocialNetwork.Graph.Areas.HelpPage.App_Start;
 
 namespace SocialNetwork.Graph.Areas.HelpPage
 {

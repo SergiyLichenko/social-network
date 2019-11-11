@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net.Http.Headers;
 
-namespace SocialNetwork.MediaFile.Areas.HelpPage
+namespace SocialNetwork.MediaFile.Areas.HelpPage.SampleGeneration
 {
     /// <summary>
     /// This is used to identify the place where the sample should be applied.
