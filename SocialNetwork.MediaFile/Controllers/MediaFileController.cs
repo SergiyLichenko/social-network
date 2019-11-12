@@ -58,5 +58,14 @@ namespace SocialNetwork.MediaFile.Controllers
 
             return await _mediaFileService.GetByTagAsync(tag);
         }
+
+        [HttpGet]
+        [Route("query")]
+        public async Task<IEnumerable<ImageInfo>> QueryImagesAsync([FromUri] Query query)
+        {
+            if(query == null) throw new ArgumentNullException(nameof(query));
+
+            return await _mediaFileService.QueryImagesAsync(query);
+        }
     }
 }
