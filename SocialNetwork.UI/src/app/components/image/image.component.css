@@ -2,3 +2,11 @@ img{
     height: 450px;
     width: 450px;
 }
+
+a{
+    margin-left: 75% !important;
+} 
+
+mat-card{
+    width: 450px;
+}

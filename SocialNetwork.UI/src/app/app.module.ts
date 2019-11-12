@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +21,7 @@ import { UserResolver } from './services/user-resolver.service';
 
 const appRoutes: Routes = [
   { path: 'media', component: MediaComponent },
-  { path: 'user', component: UserComponent, resolve: {user: UserResolver} },
+  { path: 'user', component: UserComponent, resolve: { user: UserResolver } },
   {
     path: '',
     redirectTo: '/media',
@@ -40,6 +42,8 @@ const appRoutes: Routes = [
     MatChipsModule,
     ReactiveFormsModule,
     FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
     MatButtonModule,
     BrowserAnimationsModule,
     AppRoutingModule,

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,24 +23,13 @@ namespace SocialNetwork.MediaFile.Services
         {
             var fileInfos = await Task.Run(() =>
             {
-                var files = Directory.GetFiles(BaseFolderPath)
-                                .Select(x => new Bitmap(x)).ToList();
-
-                var result = files.Select(x =>
-                {
-                    var imageInfo = new ImageInfo()
-                    {
-                        UserId = x.GetAuthorId(),
-                        Tags = x.GetTags(),
-                        Image = new MemoryStream()
-                    };
-                    x.Save(imageInfo.Image, ImageFormat.Jpeg);
-
-                    return imageInfo;
-                }).Where(x => x.UserId == userId).ToList();
-
-                files.ForEach(x => x.Dispose());
-                return result;
+                return Directory.GetFiles(BaseFolderPath)
+                                     .Select(x => new ImageInfo()
+                                     {
+                                         UserId = new Bitmap(x).GetAuthorId(),
+                                         Tags = new Bitmap(x).GetTags(),
+                                         Src = x
+                                     }).Where(x => x.UserId == userId).ToList();
             });
 
             return fileInfos;
@@ -77,9 +65,9 @@ namespace SocialNetwork.MediaFile.Services
                     {
                         UserId = x.GetAuthorId(),
                         Tags = x.GetTags(),
-                        Image = new MemoryStream()
+                        //Image = new MemoryStream()
                     };
-                    x.Save(imageInfo.Image, ImageFormat.Jpeg);
+                    //x.Save(imageInfo.Image, ImageFormat.Jpeg);
 
                     return imageInfo;
                 }).Where(x => x.Tags.Any(y => y.ToLowerInvariant() == tag.ToLowerInvariant())).ToList();
@@ -98,12 +86,12 @@ namespace SocialNetwork.MediaFile.Services
                 return Directory.GetFiles(BaseFolderPath)
                                          .OrderByDescending(x => new FileInfo(x).CreationTime)
                                          .Skip(query.Offset).Take(query.Count)
-                                         .Select(x =>new ImageInfo()
-                                             {
-                                                 UserId = new Bitmap(x).GetAuthorId(),
-                                                 Tags = new Bitmap(x).GetTags(),
-                                                 Src = x
-                                             }).ToList();
+                                         .Select(x => new ImageInfo()
+                                         {
+                                             UserId = new Bitmap(x).GetAuthorId(),
+                                             Tags = new Bitmap(x).GetTags(),
+                                             Src = x
+                                         }).ToList();
             });
 
             return fileInfos;

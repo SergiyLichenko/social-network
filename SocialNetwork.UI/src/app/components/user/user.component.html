@@ -1,1 +1,35 @@
-user
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Profile Info</mat-card-title>
+        </mat-card-header>
+        <mat-form-field>
+            <input matInput placeholder="User Name" readonly [value]="user?.userName">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="First Name" readonly [value]="user?.firstName">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Last Name" readonly [value]="user?.lastName">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" readonly [value]="user?.email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Gender" readonly [value]="user?.gender">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Country" readonly [value]="user?.country">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="City" readonly [value]="user?.city">
+        </mat-form-field>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>User Media</mat-card-title>
+        </mat-card-header>
+        <app-image *ngFor="let imageInfo of user.images" [info]="imageInfo" [show-author]="false"></app-image>
+    </mat-card>
+</div>

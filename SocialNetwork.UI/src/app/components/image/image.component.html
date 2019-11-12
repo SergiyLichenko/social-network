@@ -1,1 +1,12 @@
-<img [src]="image" *ngIf="!isImageLoading">
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{getName(info.src)}}</mat-card-title>
+    </mat-card-header>
+    <img [src]="image" *ngIf="!isImageLoading">
+    <mat-chip-list>
+        <mat-chip *ngFor="let tag of info.tags">{{tag}}</mat-chip>
+    </mat-chip-list>
+    <mat-card-actions *ngIf="showAuthor">
+        <a mat-raised-button routerLink="/user" [queryParams]="{id: info.userId}">View Author</a>
+    </mat-card-actions>
+</mat-card>

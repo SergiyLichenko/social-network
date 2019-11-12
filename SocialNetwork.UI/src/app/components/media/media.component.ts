@@ -21,12 +21,4 @@ export class MediaComponent implements OnInit {
             offset: this.offset
         }).subscribe(x => this.imageInfos = x);
     }
-
-    public getName(filePath: string){
-        let fileName = filePath.replace(/^.*[\\\/]/, '');
-        let lastIndex = fileName.lastIndexOf(".");
-        fileName = fileName.substring(0, lastIndex);
-
-        return fileName;
-    }
 }
