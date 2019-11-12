@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using SocialNetwork.SQL.Repositories.Models;
+using SocialNetwork.SQL.Models;
 
 namespace SocialNetwork.SQL.Repositories
 {

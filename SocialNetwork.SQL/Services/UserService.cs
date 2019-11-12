@@ -3,8 +3,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using GraphQL.Net;
 using Newtonsoft.Json;
+using SocialNetwork.SQL.Models;
 using SocialNetwork.SQL.Repositories;
-using SocialNetwork.SQL.Repositories.Models;
 
 namespace SocialNetwork.SQL.Services
 {

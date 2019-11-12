@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SocialNetwork.SQL.Repositories.Models
+namespace SocialNetwork.SQL.Models
 {
     [Table("Users")]
     public class User

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
-using SocialNetwork.SQL.Repositories.Models;
+using SocialNetwork.SQL.Models;
 using SocialNetwork.SQL.Services;
 
 namespace SocialNetwork.SQL.Controllers
