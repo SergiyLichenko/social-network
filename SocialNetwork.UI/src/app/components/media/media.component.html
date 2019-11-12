@@ -1,5 +1,5 @@
 <mat-grid-list cols="3" rowHeight="1:1.25">
     <mat-grid-tile *ngFor="let imageInfo of imageInfos">
-       <app-image [info]="imageInfo"></app-image>
+       <app-image [info]="imageInfo" [show-author]="true"></app-image>
     </mat-grid-tile>
 </mat-grid-list>

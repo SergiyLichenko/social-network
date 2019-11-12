@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { NgxGraphModule } from '@swimlane/ngx-graph';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
     MatButtonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    NgxGraphModule,
     MatCardModule,
     MatGridListModule,
     RouterModule.forRoot(appRoutes)

@@ -9,11 +9,13 @@ namespace SocialNetwork.Services
     {
         private readonly SqlClient _sqlClient;
         private readonly MediaClient _mediaClient;
+        private readonly GraphClient _graphClient;
 
         public UserService()
         {
             _sqlClient = new SqlClient();
             _mediaClient = new MediaClient();
+            _graphClient = new GraphClient();
         }
 
         public async Task<IEnumerable<User>> GetAllAsync(string query)
@@ -23,6 +25,7 @@ namespace SocialNetwork.Services
         {
             var user = await _sqlClient.GetByIdAsync(query);
             user.Images = await _mediaClient.GetByUserId(user.Id);
+            user.Graph = await _graphClient.GetNthDescendants(user.Id);
 
             return user;
         }

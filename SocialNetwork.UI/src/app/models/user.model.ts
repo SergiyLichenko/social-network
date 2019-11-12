@@ -1,4 +1,5 @@
 import { ImageInfo } from './image-info.model';
+import { Graph } from './graph.model';
 
 export class User {
     id: number;
@@ -10,6 +11,7 @@ export class User {
     city: string;
     gender: string;
     images: ImageInfo[];
+    graph: Graph;
 
     static getDefaultUser(){
         let user = new User();

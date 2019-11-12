@@ -14,5 +14,6 @@ namespace SocialNetwork.Models
         public string Gender { get; set; }
 
         public IEnumerable<ImageInfo> Images { get; set; }
+        public Graph Graph { get; set; }
     }
 }

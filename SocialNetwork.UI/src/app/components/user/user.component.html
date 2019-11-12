@@ -25,7 +25,13 @@
             <input matInput placeholder="City" readonly [value]="user?.city">
         </mat-form-field>
     </mat-card>
-
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>User Relationships</mat-card-title>
+        </mat-card-header>
+        <ngx-graph class="chart-container"  [links]="edges" [nodes]="nodes">
+        </ngx-graph>
+    </mat-card>
     <mat-card>
         <mat-card-header>
             <mat-card-title>User Media</mat-card-title>
