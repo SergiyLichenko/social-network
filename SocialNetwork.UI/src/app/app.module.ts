@@ -15,10 +15,11 @@ import { MediaComponent } from "./components/media/media.component";
 import { MediaService } from './services/media.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ImageComponent } from './components/image/image.component';
+import { UserResolver } from './services/user-resolver.service';
 
 const appRoutes: Routes = [
   { path: 'media', component: MediaComponent },
-  { path: 'user', component: UserComponent },
+  { path: 'user', component: UserComponent, resolve: {user: UserResolver} },
   {
     path: '',
     redirectTo: '/media',
@@ -46,7 +47,7 @@ const appRoutes: Routes = [
     MatGridListModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [MediaService],
+  providers: [MediaService, UserResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

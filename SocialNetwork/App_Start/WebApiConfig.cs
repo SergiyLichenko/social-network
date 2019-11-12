@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SocialNetwork
 {
@@ -6,6 +7,9 @@ namespace SocialNetwork
     {
         public static void Register(HttpConfiguration config)
         {
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
+
             config.MapHttpAttributeRoutes();
         }
     }
