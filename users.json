@@ -1,0 +1,118 @@
+[
+    {
+        "id": 1,
+        "firstName": "Serhii",
+        "lastName": "Lichenko",
+        "city": "Kyiv",
+        "country": "Ukraine",
+        "email": "sergiy.lichenko@outlook.com",
+        "gender": "Male",
+        "userName": "SergiyLichenko",
+        "relationships": [
+            {
+                "toUserId": 6,
+                "type": "Friend"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "firstName": "Lera",
+        "lastName": "Gaistruk",
+        "city": "Kyiv",
+        "country": "Ukraine",
+        "email": "leragaistruk@gmail.com",
+        "gender": "Female",
+        "userName": "LeraGaistruk",
+        "relationships": [
+            {
+                "toUserId": 1,
+                "type": "Girl"
+            },
+            {
+                "toUserId": 3,
+                "type": "Friend"
+            },
+            {
+                "toUserId": 7,
+                "type": "Friend"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "firstName": "Ira",
+        "lastName": "Saiko",
+        "city": "Kyiv",
+        "country": "Ukraine",
+        "email": "ira.saiko@outlook.com",
+        "gender": "Female",
+        "userName": "IraSaiko",
+        "relationships": [
+            {
+                "toUserId": 4,
+                "type": "Friend"
+            },
+            {
+                "toUserId": 8,
+                "type": "Friend"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "firstName": "FirstName4",
+        "lastName": "LastName4",
+        "city": "Kyiv",
+        "country": "Ukraine",
+        "email": "email4@outlook.com",
+        "gender": "Female",
+        "userName": "UserName4",
+        "relationships": [
+            {
+                "toUserId": 5,
+                "type": "Friend"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "firstName": "FirstName5",
+        "lastName": "LastName5",
+        "city": "Kyiv",
+        "country": "Ukraine",
+        "email": "email5@outlook.com",
+        "gender": "Female",
+        "userName": "UserName5"
+    },
+    {
+        "id": 6,
+        "firstName": "FirstName6",
+        "lastName": "LastName6",
+        "city": "Kyiv",
+        "country": "Ukraine",
+        "email": "email6@outlook.com",
+        "gender": "Female",
+        "userName": "UserName6"
+    },
+    {
+        "id": 7,
+        "firstName": "FirstName7",
+        "lastName": "LastName7",
+        "city": "Kyiv",
+        "country": "Ukraine",
+        "email": "email7@outlook.com",
+        "gender": "Female",
+        "userName": "UserName7"
+    },
+    {
+        "id": 8,
+        "firstName": "FirstName8",
+        "lastName": "LastName8",
+        "city": "Kyiv",
+        "country": "Ukraine",
+        "email": "email8@outlook.com",
+        "gender": "Female",
+        "userName": "UserName8"
+    }
+]

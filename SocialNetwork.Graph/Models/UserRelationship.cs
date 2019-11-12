@@ -2,7 +2,7 @@
 {
     public class UserRelationship
     {
-        public int FromId { get; set; }
-        public int ToId { get; set; }
+        public int ToUserId { get; set; }
+        public string Type { get; set; }
     }
 }

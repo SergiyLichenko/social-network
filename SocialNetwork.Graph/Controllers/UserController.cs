@@ -17,13 +17,18 @@ namespace SocialNetwork.Graph.Controllers
 
         [Route("descendants")]
         [HttpGet]
-        public async Task<string> GetNthDescendants([FromUri] int n)
+        public async Task<Models.Graph> GetNthDescendants([FromUri] int userId, [FromUri] int n)
         {
             if (n <= 0 || n > 3) throw new ArgumentOutOfRangeException(nameof(n));
 
-            await _userService.GetNthDescendantsAsync(n);
-            
-            return null;
+            return await _userService.GetNthDescendantsAsync(userId, n);
+        }
+
+        [Route("initialize")]
+        [HttpPost]
+        public async Task InitializeAsync()
+        {
+            await _userService.InitializeAsync();
         }
     }
 }
