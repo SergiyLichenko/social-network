@@ -11,7 +11,7 @@ export class UserResolver implements Resolve<Observable<User>> {
     resolve(route: ActivatedRouteSnapshot) {
         let userId = route.queryParams['id'];
         let fields = Object.getOwnPropertyNames(User.getDefaultUser());
-       
+        
         return this.userService.getById(userId, fields);
     }
 }

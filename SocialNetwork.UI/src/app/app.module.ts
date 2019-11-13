@@ -9,6 +9,11 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NgxGraphModule } from '@swimlane/ngx-graph';
+import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSelectModule } from '@angular/material/select';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +29,7 @@ import { DetailsComponent } from './components/details/details.component';
 const appRoutes: Routes = [
   { path: 'media', component: MediaComponent },
   { path: 'user', component: UserComponent, resolve: { user: UserResolver } },
-  { path: 'details', component: DetailsComponent},
+  { path: 'details', component: DetailsComponent },
   {
     path: '',
     redirectTo: '/media',
@@ -43,10 +48,15 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    MatCheckboxModule,
+    MatTableModule,
     MatChipsModule,
     ReactiveFormsModule,
+    MatSelectModule,
     FormsModule,
     MatInputModule,
+    MatPaginatorModule,
+    MatSortModule,
     MatFormFieldModule,
     MatButtonModule,
     BrowserAnimationsModule,

@@ -61,7 +61,7 @@
             <button (click)="onViewDetailsClick()" class="view-details-button" mat-raised-button>View Details</button>
         </mat-card-actions>
     </mat-card>
-    <mat-card>
+    <mat-card *ngIf="user.images?.length > 0">
         <mat-card-header>
             <mat-card-title>User Media</mat-card-title>
         </mat-card-header>
