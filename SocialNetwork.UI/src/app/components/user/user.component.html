@@ -29,7 +29,8 @@
         <mat-card-header>
             <mat-card-title>User Relationships</mat-card-title>
         </mat-card-header>
-        <ngx-graph class="chart-container" layout="colaForceDirected" [links]="edges" [nodes]="nodes">
+        <ngx-graph class="chart-container" layout="colaForceDirected" [center$]="center$" [links]="edges"
+            [nodes]="nodes">
             <ng-template #defsTemplate>
                 <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4"
                     orient="auto">
@@ -37,7 +38,7 @@
                 </svg:marker>
             </ng-template>
             <ng-template #nodeTemplate let-node>
-                <svg:g class="node">
+                <svg:g class="node" (dblclick)="onClick(node)">
                     <svg:rect [attr.width]="node.dimension.width" [attr.height]="node.dimension.height"
                         [attr.fill]="node.id == user.id ? 'lightgreen': 'aliceblue'" />
                     <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2">
