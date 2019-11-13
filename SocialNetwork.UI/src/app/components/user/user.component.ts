@@ -34,7 +34,7 @@ export class UserComponent implements OnInit {
         this.router.navigate(['/details'], { queryParams: { ids: ids } });
     }
 
-    public onClick(value) {
+    public onDoubleClick(value) {
         this.router.navigate(['/user'], { queryParams: { id: value.id } })
             .then(() => window.location.reload());
     }

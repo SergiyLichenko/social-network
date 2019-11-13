@@ -38,7 +38,7 @@
                 </svg:marker>
             </ng-template>
             <ng-template #nodeTemplate let-node>
-                <svg:g class="node" (dblclick)="onClick(node)">
+                <svg:g class="node" (dblclick)="onDoubleClick(node)">
                     <svg:rect [attr.width]="node.dimension.width" [attr.height]="node.dimension.height"
                         [attr.fill]="node.id == user.id ? 'lightgreen': 'aliceblue'" />
                     <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2">
