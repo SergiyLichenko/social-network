@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MediaService } from 'src/app/services/media.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ImageInfo } from 'src/app/models/image-info.model';
+import { MatChipListChange } from '@angular/material/chips';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-image',
@@ -15,6 +17,7 @@ export class ImageComponent implements OnInit {
     isImageLoading: boolean;
 
     constructor(private mediaService: MediaService,
+        private router: Router,
         private domSanitizer: DomSanitizer) {
     }
 
@@ -40,11 +43,15 @@ export class ImageComponent implements OnInit {
         }
     }
 
-    public getName(filePath: string){
+    public getName(filePath: string) {
         let fileName = filePath.replace(/^.*[\\\/]/, '');
         let lastIndex = fileName.lastIndexOf(".");
         fileName = fileName.substring(0, lastIndex);
 
         return fileName;
+    }
+
+    public onChipClick(tag: string) {
+        this.router.navigate(['/media'], { queryParams: { tag: tag } })
     }
 }

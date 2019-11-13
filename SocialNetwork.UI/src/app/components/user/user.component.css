@@ -16,3 +16,6 @@ app-image{
 .container{
     width: 1200px;
 }
+.view-details-button {
+    margin-left: 90% !important;
+} 

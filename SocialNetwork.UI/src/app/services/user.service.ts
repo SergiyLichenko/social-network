@@ -20,4 +20,15 @@ export class UserService {
 
         return this.httpClient.post<User>(this.BaseUrl + "user/getById", json, { headers: headers });
     }
+
+    public getAll(userIds: number[], fields: string[]) {
+        let headers = new HttpHeaders();
+        headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+
+        let queryIds = userIds.length > 0 ? `(ids: [${userIds.join(",")}])` : "";
+        let query = `{users${queryIds} { ${fields.join(",")}}}`;
+        let json = JSON.stringify(query);
+
+        return this.httpClient.post<User[]>(this.BaseUrl + "user/getAll", json, { headers: headers });
+    }
 }

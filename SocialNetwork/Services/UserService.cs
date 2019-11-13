@@ -7,6 +7,9 @@ namespace SocialNetwork.Services
 {
     public class UserService
     {
+        private const string ImageQueryParam = "images";
+        private const string GraphQueryParam = "graph";
+
         private readonly SqlClient _sqlClient;
         private readonly MediaClient _mediaClient;
         private readonly GraphClient _graphClient;
@@ -24,8 +27,10 @@ namespace SocialNetwork.Services
         public async Task<User> GetByIdAsync(string query)
         {
             var user = await _sqlClient.GetByIdAsync(query);
-            user.Images = await _mediaClient.GetByUserId(user.Id);
-            user.Graph = await _graphClient.GetNthDescendants(user.Id);
+            if (query.Contains(ImageQueryParam))
+                user.Images = await _mediaClient.GetByUserId(user.Id);
+            if (query.Contains(GraphQueryParam))
+                user.Graph = await _graphClient.GetNthDescendants(user.Id);
 
             return user;
         }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { Node, Edge } from '@swimlane/ngx-graph';
 import { Graph } from 'src/app/models/graph.model';
+import { Subject } from 'rxjs';
 
 @Component({
     selector: 'app-user',
@@ -14,7 +15,8 @@ export class UserComponent implements OnInit {
     public nodes: Node[];
     public edges: Edge[];
 
-    constructor(private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute,
+        private router: Router) {
     }
 
     ngOnInit(): void {
@@ -23,6 +25,11 @@ export class UserComponent implements OnInit {
             this.nodes = this.getNodes(this.user.graph);
             this.edges = this.getEdges(this.user.graph);
         });
+    }
+
+    public onViewDetailsClick() {
+        let ids = this.nodes.map(x => x.id);
+        this.router.navigate(['/details'], { queryParams: { ids: ids } })
     }
 
     private getNodes(graph: Graph) {
@@ -34,7 +41,7 @@ export class UserComponent implements OnInit {
         for (let item of graph.nodes) {
             nodes.push({
                 label: item.value,
-                id: item.id.toString()
+                id: item.id.toString(),
             })
         }
 

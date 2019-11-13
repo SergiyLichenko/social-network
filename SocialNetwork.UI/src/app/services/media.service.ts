@@ -20,4 +20,8 @@ export class MediaService {
     public getByName(name: string): Observable<Blob> {
         return this.httpClient.get(this.BaseUrl + "mediaFile/byName?fileName=" + name, { responseType: 'blob' });
     }
+
+    public getByTag(tag: string) {
+        return this.httpClient.get<ImageInfo[]>(this.BaseUrl + "mediaFile/byTag?tag=" + tag);
+    }
 }

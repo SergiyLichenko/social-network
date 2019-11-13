@@ -18,11 +18,13 @@ import { MediaComponent } from "./components/media/media.component";
 import { MediaService } from './services/media.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ImageComponent } from './components/image/image.component';
-import { UserResolver } from './services/user-resolver.service';
+import { UserResolver } from './services/resolvers/user-resolver.service';
+import { DetailsComponent } from './components/details/details.component';
 
 const appRoutes: Routes = [
   { path: 'media', component: MediaComponent },
   { path: 'user', component: UserComponent, resolve: { user: UserResolver } },
+  { path: 'details', component: DetailsComponent},
   {
     path: '',
     redirectTo: '/media',
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     AppComponent,
     MediaComponent,
     UserComponent,
-    ImageComponent
+    ImageComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

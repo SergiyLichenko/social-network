@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UserService } from './user.service';
-import { User } from '../models/user.model';
+import { UserService } from '../user.service';
+import { User } from '../../models/user.model';
 
 @Injectable()
 export class UserResolver implements Resolve<Observable<User>> {

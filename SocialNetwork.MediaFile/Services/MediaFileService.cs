@@ -23,13 +23,18 @@ namespace SocialNetwork.MediaFile.Services
         {
             var fileInfos = await Task.Run(() =>
             {
-                return Directory.GetFiles(BaseFolderPath)
-                                     .Select(x => new ImageInfo()
-                                     {
-                                         UserId = new Bitmap(x).GetAuthorId(),
-                                         Tags = new Bitmap(x).GetTags(),
-                                         Src = x
-                                     }).Where(x => x.UserId == userId).ToList();
+                var filePaths = Directory.GetFiles(BaseFolderPath).ToList();
+                var bitmaps = filePaths.Select(x => new Bitmap(x)).ToList();
+
+                var result = bitmaps.Select((x, index) => new ImageInfo()
+                {
+                    UserId = x.GetAuthorId(),
+                    Tags = x.GetTags(),
+                    Src = filePaths[index]
+                }).Where(x => x.UserId == userId).ToList();
+
+                bitmaps.ForEach(x => x.Dispose());
+                return result;
             });
 
             return fileInfos;
@@ -56,23 +61,19 @@ namespace SocialNetwork.MediaFile.Services
         {
             var fileInfos = await Task.Run(() =>
             {
-                var files = Directory.GetFiles(BaseFolderPath)
-                                     .Select(x => new Bitmap(x)).ToList();
+                var filePaths = Directory.GetFiles(BaseFolderPath)
+                                     .OrderByDescending(x => new FileInfo(x).CreationTime)
+                                     .ToList();
 
-                var result = files.Select(x =>
+                var bitmaps = filePaths.Select(x => new Bitmap(x)).ToList();
+                var result = bitmaps.Select((x, index) => new ImageInfo()
                 {
-                    var imageInfo = new ImageInfo()
-                    {
-                        UserId = x.GetAuthorId(),
-                        Tags = x.GetTags(),
-                        //Image = new MemoryStream()
-                    };
-                    //x.Save(imageInfo.Image, ImageFormat.Jpeg);
-
-                    return imageInfo;
+                    UserId = x.GetAuthorId(),
+                    Tags = x.GetTags(),
+                    Src = filePaths[index]
                 }).Where(x => x.Tags.Any(y => y.ToLowerInvariant() == tag.ToLowerInvariant())).ToList();
 
-                files.ForEach(x => x.Dispose());
+                bitmaps.ForEach(x => x.Dispose());
                 return result;
             });
 
@@ -83,15 +84,20 @@ namespace SocialNetwork.MediaFile.Services
         {
             var fileInfos = await Task.Run(() =>
             {
-                return Directory.GetFiles(BaseFolderPath)
+                var filePaths = Directory.GetFiles(BaseFolderPath)
                                          .OrderByDescending(x => new FileInfo(x).CreationTime)
-                                         .Skip(query.Offset).Take(query.Count)
-                                         .Select(x => new ImageInfo()
-                                         {
-                                             UserId = new Bitmap(x).GetAuthorId(),
-                                             Tags = new Bitmap(x).GetTags(),
-                                             Src = x
-                                         }).ToList();
+                                         .Skip(query.Offset).Take(query.Count).ToList();
+
+                var bitmaps = filePaths.Select(x => new Bitmap(x)).ToList();
+                var result = bitmaps.Select((x, index) => new ImageInfo()
+                {
+                    UserId = x.GetAuthorId(),
+                    Tags = x.GetTags(),
+                    Src = filePaths[index]
+                }).ToList();
+
+                bitmaps.ForEach(x => x.Dispose());
+                return result;
             });
 
             return fileInfos;

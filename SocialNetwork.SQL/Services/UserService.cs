@@ -18,7 +18,7 @@ namespace SocialNetwork.SQL.Services
 
             var userType = schema.AddType<User>();
             userType.AddAllFields();
-            schema.AddListField("users", x => x.Users);
+            schema.AddListField("users", new { ids = new List<int>() }, (db, args) => db.Users.Where(x=>args.ids.Contains(x.Id)));
             schema.AddField("user", new { id = 0 }, (db, args) => db.Users.FirstOrDefault(x => x.Id == args.id));
 
             schema.Complete();
