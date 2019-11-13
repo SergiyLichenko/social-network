@@ -1,14 +1,58 @@
 [
     {
         "id": 1,
-        "firstName": "Serhii",
-        "lastName": "Lichenko",
-        "city": "Kyiv",
-        "country": "Ukraine",
-        "email": "sergiy.lichenko@outlook.com",
+        "firstName": "Joe",
+        "lastName": "Snow",
+        "city": "Redmond",
+        "country": "USA",
+        "email": "joe.snow@outlook.com",
         "gender": "Male",
-        "userName": "SergiyLichenko",
+        "userName": "JoeSnow",
         "relationships": [
+            {
+                "toUserId": 2,
+                "type": "Husband"
+            },
+            {
+                "toUserId": 5,
+                "type": "Friend"
+            },
+            {
+                "toUserId": 3,
+                "type": "Friend"
+            },
+            {
+                "toUserId": 11,
+                "type": "Grandson"
+            },
+            {
+                "toUserId": 10,
+                "type": "Son"
+            },
+            {
+                "toUserId": 7,
+                "type": "Son"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "firstName": "Jane",
+        "lastName": "Snow",
+        "city": "Washington",
+        "country": "USA",
+        "email": "jane.snow@gmail.com",
+        "gender": "Female",
+        "userName": "JaneSnow",
+        "relationships": [
+            {
+                "toUserId": 1,
+                "type": "Wife"
+            },
+            {
+                "toUserId": 13,
+                "type": "Daughter"
+            },
             {
                 "toUserId": 6,
                 "type": "Friend"
@@ -16,103 +60,275 @@
         ]
     },
     {
-        "id": 2,
-        "firstName": "Lera",
-        "lastName": "Gaistruk",
+        "id": 3,
+        "firstName": "Dima",
+        "lastName": "Zadokhin",
         "city": "Kyiv",
         "country": "Ukraine",
-        "email": "leragaistruk@gmail.com",
-        "gender": "Female",
-        "userName": "LeraGaistruk",
+        "email": "dima.zadokhin@gmail.com",
+        "gender": "Male",
+        "userName": "Dima_Zadokhin98",
         "relationships": [
             {
                 "toUserId": 1,
-                "type": "Girl"
-            },
-            {
-                "toUserId": 3,
                 "type": "Friend"
             },
             {
-                "toUserId": 7,
+                "toUserId": 5,
                 "type": "Friend"
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "firstName": "Ira",
-        "lastName": "Saiko",
-        "city": "Kyiv",
-        "country": "Ukraine",
-        "email": "ira.saiko@outlook.com",
-        "gender": "Female",
-        "userName": "IraSaiko",
-        "relationships": [
+            },
             {
                 "toUserId": 4,
-                "type": "Friend"
-            },
-            {
-                "toUserId": 8,
-                "type": "Friend"
+                "type": "Husband"
             }
         ]
     },
     {
         "id": 4,
-        "firstName": "FirstName4",
-        "lastName": "LastName4",
+        "firstName": "Tetiana",
+        "lastName": "Zadokhina",
         "city": "Kyiv",
         "country": "Ukraine",
-        "email": "email4@outlook.com",
+        "email": "tetitanka98@gmail.com",
         "gender": "Female",
-        "userName": "UserName4",
+        "userName": "TanyaZadokh",
         "relationships": [
             {
-                "toUserId": 5,
+                "toUserId": 3,
+                "type": "Wife"
+            },
+            {
+                "toUserId": 12,
                 "type": "Friend"
             }
         ]
     },
     {
         "id": 5,
-        "firstName": "FirstName5",
-        "lastName": "LastName5",
-        "city": "Kyiv",
-        "country": "Ukraine",
-        "email": "email5@outlook.com",
-        "gender": "Female",
-        "userName": "UserName5"
+        "firstName": "Alex",
+        "lastName": "Fergusson",
+        "city": "London",
+        "country": "UK",
+        "email": "alex.fergusson@gmail.com",
+        "gender": "Male",
+        "userName": "Alex_MU_Fergusson",
+        "relationships": [
+            {
+                "toUserId": 1,
+                "type": "Friend"
+            },
+            {
+                "toUserId": 8,
+                "type": "Employee"
+            },
+            {
+                "toUserId": 3,
+                "type": "Friend"
+            }
+        ]
     },
     {
         "id": 6,
-        "firstName": "FirstName6",
-        "lastName": "LastName6",
+        "firstName": "Ira",
+        "lastName": "Kovalchuk",
         "city": "Kyiv",
         "country": "Ukraine",
-        "email": "email6@outlook.com",
+        "email": "ira.koval@gmail.com",
         "gender": "Female",
-        "userName": "UserName6"
+        "userName": "IraKovalchuk",
+        "relationships": [
+            {
+                "toUserId": 2,
+                "type": "Friend"
+            },
+            {
+                "toUserId": 9,
+                "type": "Friend"
+            }
+        ]
     },
     {
         "id": 7,
-        "firstName": "FirstName7",
-        "lastName": "LastName7",
-        "city": "Kyiv",
-        "country": "Ukraine",
-        "email": "email7@outlook.com",
+        "firstName": "Jennifer",
+        "lastName": "Snow",
+        "city": "Redmond",
+        "country": "USA",
+        "email": "jennifer.snow@gmail.com",
         "gender": "Female",
-        "userName": "UserName7"
+        "userName": "JenniferSnow",
+        "relationships": [
+            {
+                "toUserId": 10,
+                "type": "Wife"
+            },
+            {
+                "toUserId": 1,
+                "type": "Mother"
+            }
+        ]
     },
     {
         "id": 8,
-        "firstName": "FirstName8",
-        "lastName": "LastName8",
-        "city": "Kyiv",
-        "country": "Ukraine",
-        "email": "email8@outlook.com",
+        "firstName": "Brad",
+        "lastName": "Clark",
+        "city": "Denver",
+        "country": "USA",
+        "email": "bclark@microsoft.com",
+        "gender": "Male",
+        "userName": "BradClark",
+        "relationships": [
+            {
+                "toUserId": 5,
+                "type": "Boss"
+            },
+            {
+                "toUserId": 9,
+                "type": "Coworker"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "firstName": "James",
+        "lastName": "Ferdinand",
+        "city": "Seattle",
+        "country": "USA",
+        "email": "james.ferdinand@gmail.com",
+        "gender": "Male",
+        "userName": "James_Ferdin",
+        "relationships": [
+            {
+                "toUserId": 8,
+                "type": "Coworker"
+            },
+            {
+                "toUserId": 6,
+                "type": "Friend"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "firstName": "Jim",
+        "lastName": "Snow",
+        "city": "Shanghai",
+        "country": "Chiana",
+        "email": "jim.snow@gmail.com",
+        "gender": "Male",
+        "userName": "Jim_Snow",
+        "relationships": [
+            {
+                "toUserId": 7,
+                "type": "Husband"
+            },
+            {
+                "toUserId": 1,
+                "type": "Father"
+            },
+            {
+                "toUserId": 11,
+                "type": "Son"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "firstName": "Steve",
+        "lastName": "Smash",
+        "city": "New York",
+        "country": "USA",
+        "email": "steve.smash@gmail.com",
+        "gender": "Male",
+        "userName": "SteveSmash",
+        "relationships": [
+            {
+                "toUserId": 10,
+                "type": "Father"
+            },
+            {
+                "toUserId": 1,
+                "type": "Grandfather"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "firstName": "Sandra",
+        "lastName": "Flower",
+        "city": "Las Vegas",
+        "country": "USA",
+        "email": "sandra.flower@gmail.com",
         "gender": "Female",
-        "userName": "UserName8"
+        "userName": "Sandra_Flower",
+        "relationships": [
+            {
+                "toUserId": 4,
+                "type": "Friend"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "firstName": "Samantha",
+        "lastName": "Stark",
+        "city": "Las Vegas",
+        "country": "USA",
+        "email": "samatha.stark@gmail.com",
+        "gender": "Female",
+        "userName": "SamanthaStark",
+        "relationships": [
+            {
+                "toUserId": 2,
+                "type": "Mother"
+            },
+            {
+                "toUserId": 15,
+                "type": "Wife"
+            },
+            {
+                "toUserId": 14,
+                "type": "Friend"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "firstName": "Tony",
+        "lastName": "Clark",
+        "city": "Toronto",
+        "country": "Canada",
+        "email": "tony.clark@gmail.com",
+        "gender": "Male",
+        "userName": "TonyClark",
+        "relationships": [
+            {
+                "toUserId": 13,
+                "type": "Friend"
+            },
+            {
+                "toUserId": 15,
+                "type": "Friend"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "firstName": "Bob",
+        "lastName": "Stark",
+        "city": "London",
+        "country": "UK",
+        "email": "bob.stark@gmail.com",
+        "gender": "Male",
+        "userName": "BobStark",
+        "relationships": [
+            {
+                "toUserId": 13,
+                "type": "Husband"
+            },
+            {
+                "toUserId": 14,
+                "type": "Friend"
+            }
+        ]
     }
 ]

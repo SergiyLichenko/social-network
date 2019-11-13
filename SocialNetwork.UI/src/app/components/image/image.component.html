@@ -2,7 +2,7 @@
     <mat-card-header>
         <mat-card-title>{{getName(info.src)}}</mat-card-title>
     </mat-card-header>
-    <img [src]="image" *ngIf="!isImageLoading">
+    <img [attr.src]="image" *ngIf="!isImageLoading">
     <mat-chip-list>
         <mat-chip (click)="onChipClick(tag)" *ngFor="let tag of info.tags">{{tag}}</mat-chip>
     </mat-chip-list>

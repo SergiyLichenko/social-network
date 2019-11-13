@@ -8,7 +8,7 @@ namespace SocialNetwork.Infrastructure
     public class GraphClient
     {
         private const string BaseUrl = "https://localhost:44305/api/";
-        private const int DefaultDepth = 3;
+        private const int DefaultDepth = 2;
 
         public async Task<Models.Graph> GetNthDescendants(int userId)
         {

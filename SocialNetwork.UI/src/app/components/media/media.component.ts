@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MediaComponent implements OnInit {
     public imageInfos: ImageInfo[];
-    private count = 10;
+    private count = 100;
     private offset = 0;
 
     constructor(
