@@ -1,0 +1,72 @@
+{
+  "mediaFile": {
+    "serviceUrl": "https://localhost:44375/api/"
+  },
+  "sql": {
+    "serviceUrl": "https://localhost:44386/api/"
+  },
+  "graph": {
+    "serviceUrl": "https://localhost:44305/api/",
+    "defaultDepth": 3
+  },
+  "mappings": {
+    "mediaFile": [
+      {
+        "sourceField": "userId",
+        "targetField": "id"
+      },
+      {
+        "sourceField": "src",
+        "targetField": "mediaFileSource"
+      },
+      {
+        "sourceField": "tags",
+        "targetField": "userTags"
+      }
+    ],
+    "sql": [
+      {
+        "sourceField": "id",
+        "targetField": "id"
+      },
+      {
+        "sourceField": "email",
+        "targetField": "userEmail"
+      },
+      {
+        "sourceField": "userName",
+        "targetField": "userName"
+      },
+      {
+        "sourceField": "firstName",
+        "targetField": "firstName"
+      },
+      {
+        "sourceField": "lastName",
+        "targetField": "lastName"
+      },
+      {
+        "sourceField": "country",
+        "targetField": "country"
+      },
+      {
+        "sourceField": "city",
+        "targetField": "city"
+      },
+      {
+        "sourceField": "gender",
+        "targetField": "gender"
+      }
+    ],
+    "graph": [
+      {
+        "sourceField": "nodes",
+        "targetField": "users"
+      },
+      {
+        "sourceField": "edges",
+        "targetField": "relationships"
+      }
+    ]
+  }
+}
